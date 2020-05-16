@@ -1,0 +1,21 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Home page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+  </head>
+  <body>
+    <h1>Welcome to this page</h1>
+    <button type="button" name="button" onclick="changeColour()">
+      Click me
+    </button>
+    <a href="{% url 'contact' %}">Click here to go to contact page</a>
+    <form action="{% url 'contact' %}">
+      {% csrf_token %}
+      <input type="text" name="user_input" />
+      <input type="submit" value="Click Me" />
+    </form>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+  </body>
+</html>
